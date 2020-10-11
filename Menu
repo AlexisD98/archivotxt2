@@ -1,0 +1,73 @@
+package archivotxt2;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.*;
+
+public class Menu {
+    //Variables Globales
+    List <String> ejemplo = new ArrayList<String>();//Lista Declarada de tipo Stirng
+    Scanner entrada= new Scanner(System.in); //Delcaracion de Scanner
+    String inserta; //Metodo Insertar
+    String eli;//Metodo Borrar
+    int ac;//Metodo Actualizar
+    String ac2;//Metodo Actualizar
+    
+    public void metodoInsertar(){
+        System.out.print("Ingrese el dato: ");
+        inserta=entrada.next();
+        ejemplo.add(inserta);
+    }
+    public void metodoMostrar(){
+        if(ejemplo.isEmpty()){
+            System.out.println("Lista Vacia");
+        }else{
+            System.out.println("Los Datos son: ");
+            System.out.println(ejemplo);
+        }
+    }
+    
+    public void metodoActualizar(){
+        if(ejemplo.isEmpty()){
+            System.out.println("Lista Vacia");
+        }else{
+            System.out.println("La posicion empieza del 0 en adelante");
+            System.out.print("¿Que posicion deseas actualizar?: ");
+            ac=entrada.nextInt();
+            System.out.println(ejemplo);
+            System.out.println("****************");
+            System.out.print("Ingrese Actualizacion: ");
+            ac2=entrada.next();
+            ejemplo.set(ac,ac2);
+        }
+        
+    }
+    
+    public void metodoBorrar(){
+        int bo=0;//Variable del menu
+        if(ejemplo.isEmpty()){
+            System.out.println("Lista Vacia");
+        }else{
+        System.out.println(ejemplo);
+        System.out.println("*************");
+        System.out.println("1.Borrar un elemento");
+        System.out.println("2.Toda la lista");
+        System.out.println("*************");
+        bo=entrada.nextInt();
+        switch(bo){
+            case 1:
+                System.out.println("Que elemento a eliminar");
+                eli=entrada.next();
+                ejemplo.remove(eli);
+                System.out.println(ejemplo);
+                break;
+            case 2:
+                ejemplo.clear();
+                System.out.println("Lista Vacia");
+                break;
+            default:
+            System.out.println("Opcion Invalida");
+            break;
+        }//Switch
+        }
+    }
+}
