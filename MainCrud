@@ -1,0 +1,54 @@
+package archivotxt2;
+/*import java.io.BufferedReader;
+//import java.io.File;
+*/
+import java.util.*;
+
+public class MainCrud {
+    public static void main(String[] args) {
+        Menu instanciaMenu=new Menu();
+        
+    //Variables 
+    Scanner sc= new Scanner(System.in);
+    int opc;
+    int c=0;
+    
+    do{
+    System.out.println(" *CRUD GamerPink* ");
+    System.out.println("-----------------------------");
+    System.out.println("Selecciones su Opcion: ");
+    System.out.println("1 Insertar Dato a lista");
+    System.out.println("2 Mostrar Lista");
+    System.out.println("3 Actualizar Datos");
+    System.out.println("4 Borrar Elementos o Lista Completa ");
+    System.out.println("5 Salir");
+    System.out.println("-----------------------------");
+    opc =sc.nextInt();
+    
+    switch(opc){
+        case 1:
+            instanciaMenu.metodoInsertar();
+        break;
+        case 2:
+            instanciaMenu.metodoMostrar();
+        break;
+        case 3:
+            instanciaMenu.metodoActualizar();
+        break;
+        case 4:
+            instanciaMenu.metodoBorrar();
+        break;
+        case 5:
+            System.exit(0);
+        break;
+        default:
+            System.out.println("Opcion Invalida");
+            break;
+    }//Switch
+        System.out.println("¿Desea realizar otra accion? 1.Si 2.No");
+           c = sc.nextInt();
+    }while(c==1);
+    
+    
+    }  
+}
